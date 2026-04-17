@@ -815,10 +815,9 @@ nav {
 /* ═══════════════════════════════
    CONTACT — dark section
 ═══════════════════════════════ */
-#contact { text-align: center; }
 #contact .eyebrow { color: rgba(255,255,255,0.35); }
 #contact .s-title { color: #FFFFFF; }
-#contact .s-sub   { color: rgba(255,255,255,0.55); }
+#contact .s-sub   { color: rgba(255,255,255,0.55); max-width: 100%; }
 #contact .ch-link {
   background: rgba(255,255,255,0.05);
   border-color: rgba(255,255,255,0.10);
@@ -847,20 +846,18 @@ nav {
   border-color: rgba(255,255,255,0.45);
   color: #FFFFFF;
 }
-.contact-wrap {
-  max-width: 580px;
-  margin: 0 auto;
-}
-.contact-wrap .s-sub {
-  margin: 0 auto 48px;
-  max-width: 440px;
+.contact-heading { margin-bottom: 36px; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
 }
 .contact-channels {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 40px;
-  text-align: left;
+  margin-bottom: 28px;
 }
 .ch-link {
   display: flex;
@@ -890,9 +887,88 @@ nav {
 .contact-ctas {
   display: flex;
   gap: 12px;
-  justify-content: center;
   flex-wrap: wrap;
 }
+/* Contact Form */
+.contact-form-col {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  padding: 32px;
+}
+.contact-form-col h3 {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+.contact-form-col .form-sub {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 28px;
+}
+.form-group {
+  margin-bottom: 18px;
+}
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.40);
+  margin-bottom: 8px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-family: var(--font);
+  font-size: 14px;
+  color: rgba(255,255,255,0.88);
+  outline: none;
+  transition: border-color 0.18s, background 0.18s;
+  resize: none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,0.22); }
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.09);
+}
+.form-group textarea { height: 110px; }
+.form-submit {
+  width: 100%;
+  padding: 13px 20px;
+  background: #FFFFFF;
+  color: #111111;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, opacity 0.18s, transform 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+.form-submit:hover { background: #EEEEEE; transform: translateY(-1px); }
+.form-submit:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+.form-status {
+  margin-top: 14px;
+  font-size: 13px;
+  text-align: center;
+  min-height: 20px;
+}
+.form-status.success { color: #4ADE80; }
+.form-status.error   { color: #F87171; }
 
 /* ═══════════════════════════════
    FOOTER
@@ -964,12 +1040,17 @@ footer {
   .exp-card { padding: 28px; }
 }
 
+@media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
 @media (max-width: 480px) {
   .hero-name { font-size: 2.25rem; }
   .stats-panel { grid-template-columns: 1fr 1fr; }
   .hero-ctas { flex-direction: column; }
   .contact-ctas { flex-direction: column; align-items: stretch; }
   .contact-ctas a { justify-content: center; }
+  .contact-form-col { padding: 24px; }
 }
 
 </style>
@@ -1386,36 +1467,65 @@ footer {
 <!-- ══════════ CONTACT ══════════ -->
 <section id="contact">
   <div class="wrap">
-    <div class="contact-wrap">
-      <div class="rv">
-        <p class="eyebrow">Contact</p>
-        <h2 class="s-title">Let's build<br>something great.</h2>
-        <p class="s-sub">Open to internships, collaborations, and full-time opportunities. Always excited to connect, build, and contribute to meaningful projects.</p>
+    <div class="contact-grid">
+      <!-- Left: header + channels + CTAs -->
+      <div>
+        <div class="rv contact-heading">
+          <p class="eyebrow">Contact</p>
+          <h2 class="s-title">Let's build<br>something great.</h2>
+          <p class="s-sub">Open to internships, collaborations,<br>and full-time opportunities. Always excited<br>to connect, build, and contribute.</p>
+        </div>
+        <div class="contact-channels rv d2">
+          <a href="https://mail.google.com/mail/?view=cm&to=abhiram.j2006@gmail.com" target="_blank" rel="noopener noreferrer" class="ch-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+            abhiram.j2006@gmail.com
+          </a>
+          <a href="tel:+918125551995" class="ch-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l1.01-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            +91 81255 51995
+          </a>
+          <a href="https://linkedin.com/in/abhiram-jonnadula" target="_blank" rel="noopener noreferrer" class="ch-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45H16.9v-5.57c0-1.33 0-3.04-1.85-3.04s-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43A2.06 2.06 0 1 1 5.33 3.3a2.06 2.06 0 0 1 .01 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+            linkedin.com/in/abhiram-jonnadula
+          </a>
+          <a href="https://github.com/Abhiram1106" target="_blank" rel="noopener noreferrer" class="ch-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3A12 12 0 0 0 8.2 23.4c.6.1.8-.3.8-.6v-2.3c-3.3.8-4-1.4-4-1.4-.6-1.5-1.4-1.9-1.4-1.9-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+            github.com/Abhiram1106
+          </a>
+        </div>
+        <div class="contact-ctas rv d4">
+          <a href="https://mail.google.com/mail/?view=cm&to=abhiram.j2006@gmail.com" target="_blank" rel="noopener noreferrer" class="btn-dark">
+            Send an Email
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/abhiram-jonnadula" target="_blank" rel="noopener noreferrer" class="btn-ghost">Connect on LinkedIn</a>
+        </div>
       </div>
-      <div class="contact-channels rv d2">
-        <a href="https://mail.google.com/mail/?view=cm&to=abhiram.j2006@gmail.com" target="_blank" rel="noopener noreferrer" class="ch-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
-          abhiram.j2006@gmail.com
-        </a>
-        <a href="tel:+918125551995" class="ch-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l1.01-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +91 81255 51995
-        </a>
-        <a href="https://linkedin.com/in/abhiram-jonnadula" target="_blank" rel="noopener noreferrer" class="ch-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45H16.9v-5.57c0-1.33 0-3.04-1.85-3.04s-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43A2.06 2.06 0 1 1 5.33 3.3a2.06 2.06 0 0 1 .01 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
-          linkedin.com/in/abhiram-jonnadula
-        </a>
-        <a href="https://github.com/Abhiram1106" target="_blank" rel="noopener noreferrer" class="ch-link">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3A12 12 0 0 0 8.2 23.4c.6.1.8-.3.8-.6v-2.3c-3.3.8-4-1.4-4-1.4-.6-1.5-1.4-1.9-1.4-1.9-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
-          github.com/Abhiram1106
-        </a>
-      </div>
-      <div class="contact-ctas rv d4">
-        <a href="https://mail.google.com/mail/?view=cm&to=abhiram.j2006@gmail.com" target="_blank" rel="noopener noreferrer" class="btn-dark">
-          Send an Email
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-        <a href="https://linkedin.com/in/abhiram-jonnadula" target="_blank" rel="noopener noreferrer" class="btn-ghost">Connect on LinkedIn</a>
+
+      <!-- Right: contact form -->
+      <div class="contact-form-col rv d2">
+        <h3>Send a message</h3>
+        <p class="form-sub">I'll get back to you within 24 hours.</p>
+        <form id="contactForm" novalidate>
+          <input type="hidden" name="title" value="Portfolio Inquiry">
+          <div class="form-group">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" placeholder="What's on your mind?" required></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="formSubmitBtn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Message
+          </button>
+          <p class="form-status" id="formStatus"></p>
+        </form>
       </div>
     </div>
   </div>
@@ -1436,7 +1546,50 @@ footer {
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
+/* ── EmailJS ── */
+(function () {
+  emailjs.init({ publicKey: 'rYJdlisvLIWvu_b9G' });
+})();
+
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const btn = document.getElementById('formSubmitBtn');
+  const status = document.getElementById('formStatus');
+  const btnHTML = btn.innerHTML;
+
+  btn.disabled = true;
+  btn.textContent = 'Sending\u2026';
+  status.textContent = '';
+  status.className = 'form-status';
+
+  const templateParams = {
+    name:    document.getElementById('cf-name').value.trim(),
+    email:   document.getElementById('cf-email').value.trim(),
+    title:   'Portfolio Inquiry',
+    message: document.getElementById('cf-message').value.trim(),
+    time:    new Date().toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' }),
+    year:    new Date().getFullYear()
+  };
+
+  emailjs.send('service_di27rf3', 'template_hkptyfd', templateParams)
+    .then(() => {
+      status.textContent = "Message sent! I\u2019ll be in touch soon.";
+      status.className = 'form-status success';
+      this.reset();
+    })
+    .catch((err) => {
+      console.error('EmailJS error:', err);
+      status.textContent = 'Error ' + (err.status || '') + ': ' + (err.text || err.message || JSON.stringify(err));
+      status.className = 'form-status error';
+    })
+    .finally(() => {
+      btn.disabled = false;
+      btn.innerHTML = btnHTML;
+    });
+});
+
 /* ── Hamburger Menu ── */
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
