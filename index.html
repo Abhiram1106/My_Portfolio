@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Abhiram | Full Stack Developer Portfolio</title>
-<meta name="description" content="Abhiram - Full Stack Developer specializing in MERN, AI, and scalable applications. Explore projects, skills, and experience.">
-<meta name="keywords" content="Abhiram, Full Stack Developer, MERN, Portfolio, Software Engineer India">
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="google-site-verification" content="onTxzWmJrpxSgLXDUeFGX0jqrU1wHrT-eXy2-4aEBt0" />
-<title>Jonnadula Abhiram — Full-Stack Engineer</title>
+<title>Abhiram · Full-Stack Engineer</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563EB'/><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Inter,system-ui,sans-serif' font-weight='700' font-size='13' fill='white'>JA</text></svg>"/>
 <meta name="description" content="Full-Stack Software Developer & Backend Specialist. Building production-grade web systems, real-time applications, and scalable APIs."/>
 <meta property="og:type"        content="website"/>
-<meta property="og:title"       content="Jonnadula Abhiram — Full-Stack Engineer"/>
+<meta property="og:title"       content="Abhiram · Full-Stack Engineer"/>
 <meta property="og:description" content="Full-Stack Software Developer & Backend Specialist. Building production-grade web systems, real-time applications, and scalable APIs."/>
 <meta property="og:image"       content="https://abhiram1106.github.io/My_Portfolio/profile.jpeg"/>
 <meta property="og:url"         content="https://abhiram1106.github.io/My_Portfolio/"/>
 <meta name="twitter:card"        content="summary_large_image"/>
-<meta name="twitter:title"       content="Jonnadula Abhiram — Full-Stack Engineer"/>
+<meta name="twitter:title"       content="Abhiram · Full-Stack Engineer"/>
 <meta name="twitter:description" content="Full-Stack Software Developer & Backend Specialist. Building production-grade web systems, real-time applications, and scalable APIs."/>
 <meta name="twitter:image"       content="https://abhiram1106.github.io/My_Portfolio/profile.jpeg"/>
 <link rel="canonical"          href="https://abhiram1106.github.io/My_Portfolio/"/>
@@ -80,25 +78,6 @@
 ═══════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Cursor Spotlight ── */
-#cursorSpotlight {
-  position: fixed;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(37,99,235,0.07) 0%, transparent 70%);
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-  transition: opacity 0.3s;
-  opacity: 0;
-}
-[data-theme="dark"] #cursorSpotlight {
-  background: radial-gradient(circle, rgba(96,165,250,0.08) 0%, transparent 70%);
-}
-body:hover #cursorSpotlight { opacity: 1; }
-@media (prefers-reduced-motion: reduce) { #cursorSpotlight { display: none; } }
-
 /* ── Back to Top ── */
 #backToTop {
   position: fixed;
@@ -156,50 +135,101 @@ body:hover #cursorSpotlight { opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) { .sk[data-tip]:hover::after, .sk[data-tip]:hover::before { display: none; } }
 
-/* ── Currently Building Badge ── */
-.building-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #16a34a;
-  background: rgba(22,163,74,0.1);
-  border: 1px solid rgba(22,163,74,0.25);
-  padding: 4px 10px;
-  border-radius: 99px;
-  margin-bottom: 10px;
-}
-.building-badge::before {
-  content: '';
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #16a34a;
-  animation: pulse-green 1.6s infinite;
-}
-@keyframes pulse-green {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.3); }
-}
 
 
-/* ── GitHub Heatmap ── */
+/* ── GitHub Activity ── */
 #github-heatmap { background: var(--bg); }
-.heatmap-wrap {
-  margin-top: 40px;
+.gh-panel {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.gh-chart-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--r);
   padding: 28px 32px;
   overflow: hidden;
 }
-.heatmap-wrap img {
-  width: 100%;
-  border-radius: 6px;
-  display: block;
+.gh-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
+.gh-chart-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.gh-chart-sub {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+.gh-chart-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.gh-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-3);
+}
+.gh-legend-swatch {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.gh-legend-swatch span {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+}
+.gh-chart-img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+[data-theme="dark"] .gh-chart-img { filter: invert(1) hue-rotate(180deg) brightness(0.9); }
+.gh-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 4px;
+  align-self: flex-start;
+}
+.gh-profile-link svg { transition: transform 0.18s; }
+.gh-profile-link:hover svg { transform: translateX(3px); }
+@media (max-width: 600px) {
+  .gh-chart-card { padding: 20px 16px; }
+}
+.gh-legend-swatch .l0 { background: #ebedf0; }
+.gh-legend-swatch .l1 { background: #9be9a8; }
+.gh-legend-swatch .l2 { background: #40c463; }
+.gh-legend-swatch .l3 { background: #30a14e; }
+.gh-legend-swatch .l4 { background: #216e39; }
+.gh-lang-js   { background: #f1e05a; }
+.gh-lang-ts   { background: #3178c6; }
+.gh-lang-py   { background: #3572A5; }
+.gh-lang-java { background: #b07219; }
+
+
+/* Stats cards — count-up target */
+.gh-stat-val { transition: none; }
+
+/* Language bar */
 
 /* ── Custom Scrollbar ── */
 ::-webkit-scrollbar              { width: 4px; }
@@ -219,6 +249,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 a { text-decoration: none; color: inherit; }
@@ -268,7 +299,7 @@ section { padding: 112px 0; }
 #about      { background: var(--surface); }
 #experience { background: var(--bg); }
 #skills     { background: var(--surface); }
-#projects   { background: var(--bg); }
+#projects   { background: var(--surface); }
 #achievements { background: var(--surface); }
 #contact {
   background: #111111;
@@ -591,14 +622,16 @@ nav {
   margin-bottom: 24px;
   background: linear-gradient(135deg, var(--text) 0%, #2563EB 60%, var(--text) 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 [data-theme="dark"] .hero-name {
   background: linear-gradient(135deg, #ffffff 0%, #60a5fa 55%, #ffffff 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 .hero-title {
   font-size: 1.0625rem;
@@ -653,6 +686,8 @@ nav {
     0 8px 24px rgba(0,0,0,0.08),
     0 24px 56px rgba(0,0,0,0.10);
 }
+/* Inside border-glow-card the card itself provides radius + shadow */
+.hero-photo--card { border-radius: 0; box-shadow: none; }
 .photo-stub {
   width: 360px;
   height: 440px;
@@ -744,6 +779,13 @@ nav {
     var(--gradient-seven, radial-gradient(at 51%  4%, hsla( 12,100%,72%,1) 0px, transparent 50%)) border-box,
     var(--gradient-base,  linear-gradient(#c299ff 0 100%)) border-box;
   opacity: calc((var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
+  -webkit-mask-image: conic-gradient(
+    from var(--cursor-angle) at center,
+    black calc(var(--cone-spread) * 1%),
+    transparent calc((var(--cone-spread) + 15) * 1%),
+    transparent calc((100 - var(--cone-spread) - 15) * 1%),
+    black calc((100 - var(--cone-spread)) * 1%)
+  );
   mask-image: conic-gradient(
     from var(--cursor-angle) at center,
     black calc(var(--cone-spread) * 1%),
@@ -763,6 +805,14 @@ nav {
     var(--gradient-six,   radial-gradient(at 82% 18%, hsla( 52,100%,65%,1) 0px, transparent 50%)) padding-box,
     var(--gradient-seven, radial-gradient(at 51%  4%, hsla( 12,100%,72%,1) 0px, transparent 50%)) padding-box,
     var(--gradient-base,  linear-gradient(#c299ff 0 100%)) padding-box;
+  -webkit-mask-image:
+    linear-gradient(to bottom, black, black),
+    radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%),
+    radial-gradient(ellipse at 66% 66%, black  5%, transparent 40%),
+    radial-gradient(ellipse at 33% 33%, black  5%, transparent 40%),
+    radial-gradient(ellipse at 66% 33%, black  5%, transparent 40%),
+    radial-gradient(ellipse at 33% 66%, black  5%, transparent 40%),
+    conic-gradient(from var(--cursor-angle) at center, transparent 5%, black 15%, black 85%, transparent 95%);
   mask-image:
     linear-gradient(to bottom, black, black),
     radial-gradient(ellipse at 50% 50%, black 40%, transparent 65%),
@@ -771,6 +821,7 @@ nav {
     radial-gradient(ellipse at 66% 33%, black  5%, transparent 40%),
     radial-gradient(ellipse at 33% 66%, black  5%, transparent 40%),
     conic-gradient(from var(--cursor-angle) at center, transparent 5%, black 15%, black 85%, transparent 95%);
+  -webkit-mask-composite: subtract, destination-over, destination-over, destination-over, destination-over, destination-over;
   mask-composite: subtract, add, add, add, add, add;
   opacity: calc(var(--fill-opacity, 0.5) * (var(--edge-proximity) - var(--color-sensitivity)) / (100 - var(--color-sensitivity)));
   mix-blend-mode: soft-light;
@@ -779,11 +830,16 @@ nav {
   inset: calc(var(--glow-padding) * -1);
   pointer-events: none;
   z-index: 1;
+  -webkit-mask-image: conic-gradient(
+    from var(--cursor-angle) at center,
+    black 2.5%, transparent 10%, transparent 90%, black 97.5%
+  );
   mask-image: conic-gradient(
     from var(--cursor-angle) at center,
     black 2.5%, transparent 10%, transparent 90%, black 97.5%
   );
   opacity: calc((var(--edge-proximity) - var(--edge-sensitivity)) / (100 - var(--edge-sensitivity)));
+  mix-blend-mode: screen;
   mix-blend-mode: plus-lighter;
 }
 .border-glow-card > .edge-light::before {
@@ -813,6 +869,9 @@ nav {
   overflow: hidden;
   z-index: 1;
   border-radius: inherit;
+  /* prevent child shine/glare from leaking outside rounded corners */
+  -webkit-mask-image: radial-gradient(white, white);
+  mask-image: radial-gradient(white, white);
 }
 
 /* ═══════════════════════════════
@@ -1306,10 +1365,10 @@ nav {
   font-size: 1.25rem;
   flex-shrink: 0;
 }
-.ach-icon-amber  { background: rgba(251,191, 36,0.15); }
-.ach-icon-slate  { background: rgba(100,116,139,0.12); }
-.ach-icon-purple { background: rgba(139, 92,246,0.12); }
-.ach-icon-green  { background: rgba( 34,197, 94,0.12); }
+.ach-icon-amber  { background: rgba(251,191, 36,0.15); color: #f59e0b; }
+.ach-icon-slate  { background: rgba(100,116,139,0.12); color: #64748b; }
+.ach-icon-purple { background: rgba(139, 92,246,0.12); color: #8b5cf6; }
+.ach-icon-green  { background: rgba( 34,197, 94,0.12); color: #22c55e; }
 .ach-title {
   font-size: 1rem;
   font-weight: 600;
@@ -1514,6 +1573,92 @@ footer {
 }
 .foot-links a:hover { color: rgba(255,255,255,0.75); }
 
+/* footer social icons row */
+.foot-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.foot-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  color: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: color 0.18s, border-color 0.18s, background 0.18s;
+}
+.foot-social a:hover { color: #fff; border-color: rgba(255,255,255,0.25); background: rgba(255,255,255,0.06); }
+.foot-social svg { width: 15px; height: 15px; }
+.foot-tagline { font-size: 12px; color: rgba(255,255,255,0.18); margin-top: 6px; }
+.foot-social a { position: relative; }
+.foot-social a::after {
+  content: attr(data-handle);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #111111;
+  color: rgba(255,255,255,0.85);
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 5px 9px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.1);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s, transform 0.18s;
+}
+.foot-social a:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* hero primary CTA */
+.btn-primary {
+  font-size: 15px;
+  padding: 13px 26px;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.btn-primary:hover { background: #1d4ed8; border-color: #1d4ed8; opacity: 1; }
+[data-theme="dark"] .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+[data-theme="dark"] .btn-primary:hover { background: #1d4ed8; }
+
+/* mobile nav refinements */
+.mobile-menu { padding: 8px 20px 20px; gap: 0; }
+.mobile-menu a { font-size: 15px; padding: 14px 8px; }
+.mobile-menu-actions { padding-top: 20px; gap: 10px; }
+
+/* form submit loading spinner */
+.form-submit .spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(0,0,0,0.15);
+  border-top-color: var(--text);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* proj-sm github link */
+.proj-sm-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-3);
+  margin-top: 8px;
+  transition: color 0.18s;
+}
+.proj-sm-link:hover { color: var(--accent); }
+.proj-sm-link svg { width: 13px; height: 13px; flex-shrink: 0; }
+
 /* ═══════════════════════════════
    REVEAL ANIMATION
 ═══════════════════════════════ */
@@ -1533,43 +1678,337 @@ footer {
 .d5 { transition-delay: .24s; }
 
 /* ═══════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — full site coverage
+   1280 · 1024 · 768 · 600 · 480 · 360
 ═══════════════════════════════ */
-@media (max-width: 1024px) {
-  .smaller-grid { grid-template-columns: 1fr 1fr; }
-  .featured-row { grid-template-columns: 1fr; }
+
+/* ── 1280px: narrow desktop / large laptop ── */
+@media (max-width: 1280px) {
+  .nav-inner { padding: 0 32px; }
+  .wrap { padding: 0 32px; }
+  .hero-grid { gap: 48px; }
+  .about-grid { gap: 56px; }
+  .contact-grid { gap: 40px; }
 }
 
+/* ── 1024px: tablet landscape / small laptop ── */
+@media (max-width: 1024px) {
+  .wrap { padding: 0 28px; }
+  .nav-inner { padding: 0 24px; }
+  section { padding: 88px 0; }
+
+  /* Nav — shrink gap so items don't overflow */
+  .nav-links { gap: 28px; }
+  .nav-resume { display: none; }
+
+  /* Hero */
+  .hero-grid { grid-template-columns: 1fr 300px; gap: 40px; }
+  .hero-photo { width: 270px; height: 340px; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+  .stat-cell { padding: 22px 18px; }
+
+  /* Experience */
+  .exp-card { padding: 32px 36px; }
+
+  /* Skills */
+  .skill-cat { width: 76px; }
+
+  /* Projects */
+  .featured-row { grid-template-columns: 1fr; }
+  .smaller-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Achievements */
+  .ach-grid { grid-template-columns: 1fr 1fr; }
+
+  /* Contact */
+  .contact-grid { gap: 36px; }
+
+  /* GitHub */
+  .gh-chart-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+/* ── 768px: tablet portrait — primary mobile switch ── */
 @media (max-width: 768px) {
-  .wrap { padding: 0 24px; }
-  section { padding: 80px 0; }
+  /* ─ Layout ─ */
+  .wrap { padding: 0 20px; }
+  section { padding: 72px 0; }
+
+  /* ─ Nav ─ */
+  .nav-inner { padding: 0 20px; }
   .nav-links { display: none; }
   .nav-actions { display: none; }
   .nav-hamburger { display: flex; }
   .mobile-menu { display: flex; }
-  .nav-inner { padding: 0 20px; }
-  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+
+  /* ─ Hero ─ */
+  #hero { min-height: unset; padding: 56px 0 64px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
   .hero-photo-col { order: -1; justify-content: center; }
-  .hero-photo { width: 100%; max-width: 340px; height: 380px; }
+  .hero-photo { width: 210px; height: 256px; border-radius: 14px; }
   .hero-name { font-size: 2.75rem; }
-  .about-grid { grid-template-columns: 1fr; gap: 48px; }
-  .featured-row { grid-template-columns: 1fr; }
-  .smaller-grid { grid-template-columns: 1fr; }
-  .ach-grid { grid-template-columns: 1fr; }
-  .exp-card { padding: 28px; }
+  .hero-desc { font-size: 1rem; margin-bottom: 32px; max-width: 100%; }
+  .hero-status { margin-bottom: 24px; font-size: 12px; }
+  .hero-ctas { flex-wrap: wrap; gap: 10px; }
+
+  /* ─ About ─ */
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .s-title { font-size: clamp(1.75rem, 6vw, 2.25rem); }
+  .s-sub { font-size: 1rem; }
+  .stats-panel { grid-template-columns: repeat(2, 1fr); }
+  .stat-cell { padding: 24px 18px; }
+
+  /* ─ Experience ─ */
+  .exp-card { padding: 24px 22px; margin-top: 40px; }
+  .exp-header { flex-direction: column; gap: 10px; align-items: flex-start; }
+  .exp-role { font-size: 1.0625rem; }
+  .exp-list li { font-size: 0.9rem; }
+
+  /* ─ Skills ─ */
+  #skills { padding: 72px 0; }
+  .skill-row { flex-direction: column; align-items: flex-start; gap: 10px; padding: 16px 0; }
+  .skill-cat { width: auto; font-size: 10px; }
+  .skill-tags { gap: 6px; }
+
+  /* ─ Projects ─ */
+  .featured-row { grid-template-columns: 1fr; gap: 16px; }
+  .smaller-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .proj-card { padding: 26px 24px; }
+  .proj-sm { padding: 22px 18px; }
+  .proj-name { font-size: 1.0625rem; }
+  .proj-bullets li { font-size: 0.9rem; }
+
+  /* ─ Achievements ─ */
+  .ach-grid { grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 40px; }
+  .ach-card { padding: 20px 18px; gap: 14px; }
+
+  /* ─ Contact ─ */
+  .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .contact-form-col { padding: 24px 20px; }
+  .contact-ctas { flex-wrap: wrap; gap: 10px; }
+  .ch-link { font-size: 13.5px; padding: 13px 16px; }
+
+  /* ─ GitHub activity ─ */
+  .gh-panel { gap: 16px; }
+  .gh-chart-card { padding: 20px 18px; }
+  .gh-chart-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .gh-legend { display: none; }
+
+  /* ─ Footer ─ */
+  .foot-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .foot-links { gap: 16px; flex-wrap: wrap; }
+
+  /* ─ Pull cord ─ */
+  .pull-cord-wrap { right: 16px; }
 }
 
-@media (max-width: 768px) {
-  .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+/* ── 600px: large phone / landscape phone ── */
+@media (max-width: 600px) {
+  .wrap { padding: 0 16px; }
+  .nav-inner { padding: 0 16px; }
+  section { padding: 60px 0; }
+
+  /* Hero */
+  #hero { padding: 40px 0 50px; }
+  .hero-grid { gap: 28px; }
+  .hero-photo { width: 180px; height: 220px; }
+  .hero-name { font-size: 2.4rem; }
+  .hero-ctas .btn-dark,
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-ghost { font-size: 13.5px; padding: 11px 18px; }
+
+  /* About */
+  .stat-cell { padding: 20px 14px; }
+  .stat-num { font-size: 1.875rem; }
+  .about-pills { gap: 6px; }
+
+  /* Experience */
+  .exp-card { padding: 20px 18px; margin-top: 32px; }
+  .exp-list li { font-size: 0.875rem; padding-left: 16px; }
+
+  /* Skills */
+  .sk { font-size: 11.5px; padding: 4px 9px; }
+
+  /* Projects */
+  .smaller-grid { grid-template-columns: 1fr; gap: 12px; }
+  .proj-card { padding: 22px 18px; }
+  .proj-sm { padding: 20px 16px; }
+  .proj-name { font-size: 1rem; }
+  .proj-desc { font-size: 0.875rem; }
+  .proj-tag { font-size: 10.5px; }
+
+  /* Achievements */
+  .ach-grid { grid-template-columns: 1fr; gap: 12px; }
+  .ach-card { padding: 18px 16px; gap: 14px; }
+  .ach-icon { width: 38px; height: 38px; }
+  .ach-icon svg { width: 18px; height: 18px; }
+  .ach-title { font-size: 0.9375rem; }
+
+  /* Contact */
+  .contact-form-col { padding: 20px 16px; }
+  .ch-link { font-size: 13px; padding: 12px 14px; gap: 10px; }
+  .ch-link svg { width: 16px; height: 16px; }
+  .gh-chart-card { padding: 18px 16px; }
+
+  /* Footer */
+  .foot-links { gap: 12px; }
+  .foot-copy { font-size: 12px; }
+  .foot-tagline { font-size: 11px; }
 }
 
+/* ── 480px: phone portrait ── */
 @media (max-width: 480px) {
-  .hero-name { font-size: 2.25rem; }
-  .stats-panel { grid-template-columns: 1fr 1fr; }
-  .hero-ctas { flex-direction: column; }
-  .contact-ctas { flex-direction: column; align-items: stretch; }
-  .contact-ctas a { justify-content: center; }
-  .contact-form-col { padding: 24px; }
+  .wrap { padding: 0 14px; }
+  .nav-inner { padding: 0 14px; }
+  section { padding: 52px 0; }
+
+  /* Nav */
+  .nav-logo { font-size: 14px; letter-spacing: -0.01em; }
+
+  /* Hero */
+  #hero { padding: 36px 0 46px; }
+  .hero-grid { gap: 24px; }
+  .hero-photo { width: 156px; height: 190px; border-radius: 12px; }
+  .hero-status { font-size: 11px; padding: 5px 12px 5px 8px; margin-bottom: 20px; }
+  .hero-name { font-size: 2rem; letter-spacing: -0.035em; line-height: 1.06; }
+  .hero-title { font-size: 0.9375rem; }
+  .hero-desc { font-size: 0.9375rem; line-height: 1.7; margin-bottom: 28px; }
+  .hero-ctas { flex-direction: column; align-items: stretch; gap: 10px; }
+  .hero-ctas a { justify-content: center; text-align: center; font-size: 14px; padding: 12px 18px; }
+
+  /* Section typography */
+  .eyebrow { font-size: 9.5px; }
+  .s-title { font-size: clamp(1.5rem, 7.5vw, 2rem); }
+  .s-sub { font-size: 0.9375rem; line-height: 1.7; }
+
+  /* About */
+  .about-grid { gap: 32px; }
+  .about-text p { font-size: 1rem; }
+  .stats-panel { grid-template-columns: repeat(2, 1fr); }
+  .stat-cell { padding: 18px 12px; }
+  .stat-num { font-size: 1.75rem; }
+  .stat-label { font-size: 10.5px; }
+  .about-pills { gap: 5px; margin-top: 20px; }
+  .pill { font-size: 11px; padding: 4px 10px; }
+
+  /* Experience */
+  .exp-card { padding: 18px 14px; border-radius: 12px; margin-top: 28px; }
+  .exp-role { font-size: 1rem; }
+  .exp-company { font-size: 13px; }
+  .exp-period { font-size: 11.5px; padding: 4px 10px; }
+  .exp-list { gap: 10px; }
+  .exp-list li { font-size: 0.875rem; padding-left: 16px; line-height: 1.6; }
+
+  /* Skills */
+  #skills { padding: 52px 0; }
+  .skills-header { margin-bottom: 16px; }
+  .skill-row { padding: 14px 0; gap: 8px; }
+  .skill-cat { font-size: 9px; }
+  .sk { font-size: 11px; padding: 3px 8px; gap: 4px; }
+  .sk img { width: 11px; height: 11px; }
+
+  /* Projects */
+  .projects-intro { margin-bottom: 32px; }
+  .featured-row { gap: 12px; }
+  .proj-card { padding: 18px 14px; border-radius: 12px; }
+  .proj-sm { padding: 18px 14px; border-radius: 12px; }
+  .proj-idx { font-size: 9.5px; margin-bottom: 12px; }
+  .proj-name { font-size: 1rem; margin-bottom: 10px; }
+  .proj-bullets li { font-size: 0.875rem; padding-left: 14px; line-height: 1.58; }
+  .proj-desc { font-size: 0.875rem; line-height: 1.65; }
+  .proj-tags { gap: 5px; margin-bottom: 16px; }
+  .proj-tag { font-size: 10px; padding: 3px 8px; }
+  .proj-link { font-size: 12.5px; }
+
+  /* Achievements */
+  .ach-grid { gap: 10px; margin-top: 28px; }
+  .ach-card { padding: 16px 14px; gap: 12px; }
+  .ach-icon { width: 36px; height: 36px; border-radius: 8px; }
+  .ach-icon svg { width: 17px; height: 17px; }
+  .ach-title { font-size: 0.875rem; }
+  .ach-org { font-size: 10px; }
+  .ach-desc { font-size: 0.8125rem; line-height: 1.6; }
+
+  /* Contact */
+  .contact-heading { margin-bottom: 24px; }
+  .contact-channels { gap: 8px; margin-bottom: 20px; }
+  .ch-link { font-size: 12.5px; padding: 11px 12px; gap: 10px; border-radius: 8px; }
+  .ch-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+  .contact-ctas { flex-direction: column; align-items: stretch; gap: 8px; }
+  .contact-ctas a { justify-content: center; font-size: 13.5px; padding: 11px 16px; }
+  .contact-form-col { padding: 18px 14px; border-radius: 12px; }
+  .contact-form-col h3 { font-size: 1rem; }
+  .contact-form-col .form-sub { font-size: 12.5px; margin-bottom: 20px; }
+  .form-group { margin-bottom: 14px; }
+  .form-group label { font-size: 11px; }
+  .form-group input,
+  .form-group textarea { font-size: 13.5px; padding: 10px 12px; }
+  .form-group textarea { height: 96px; }
+  .form-submit { font-size: 13.5px; padding: 12px 16px; }
+
+  /* GitHub activity */
+  .gh-panel { margin-top: 36px; gap: 14px; }
+  .gh-chart-card { padding: 16px 14px; border-radius: 10px; }
+
+  /* Footer */
+  .foot-inner { gap: 18px; }
+  .foot-copy { font-size: 12px; }
+  .foot-tagline { font-size: 10.5px; margin-top: 4px; }
+  .foot-links { gap: 10px; flex-wrap: wrap; }
+  .foot-links a { font-size: 12px; }
+  .foot-social { gap: 10px; }
+  .foot-social a { width: 30px; height: 30px; }
+
+  /* Back to top */
+  #backToTop { width: 38px; height: 38px; right: 16px; bottom: 20px; }
+}
+
+/* hide the manual line-break inside hero name on phones — clamp handles wrapping */
+@media (max-width: 480px) {
+  .hero-name-br { display: none; }
+}
+
+/* ── 360px: small phones — Galaxy S, older iPhones ── */
+@media (max-width: 360px) {
+  .wrap { padding: 0 12px; }
+  .nav-inner { padding: 0 12px; }
+  section { padding: 44px 0; }
+  .nav-logo { font-size: 13.5px; }
+
+  /* Hero */
+  #hero { padding: 32px 0 40px; }
+  .hero-photo { width: 136px; height: 166px; }
+  .hero-name { font-size: 1.8rem; }
+  .hero-status { font-size: 10.5px; }
+  .hero-ctas a { font-size: 13px; padding: 11px 14px; }
+
+  /* About */
+  .stat-num { font-size: 1.625rem; }
+  .stat-cell { padding: 16px 10px; }
+  .stat-label { font-size: 9.5px; }
+
+  /* Experience */
+  .exp-card { padding: 16px 12px; }
+
+  /* Skills */
+  .sk { font-size: 10.5px; padding: 3px 7px; }
+
+  /* Projects */
+  .proj-card,
+  .proj-sm { padding: 16px 12px; }
+  .proj-name { font-size: 0.9375rem; }
+
+  /* Achievements */
+  .ach-card { padding: 14px 12px; gap: 10px; }
+
+  /* Contact */
+  .ch-link { font-size: 12px; padding: 10px 10px; }
+  .contact-form-col { padding: 14px 12px; }
+
+  /* Footer */
+  .foot-links { flex-direction: column; gap: 8px; }
+  .foot-links a { font-size: 11.5px; }
 }
 
 /* ═══════════════════════════════
@@ -1689,9 +2128,9 @@ footer {
 </head>
 <body>
 
+
 <div id="scrollProgress"></div>
-<div id="cursorSpotlight"></div>
-<button id="backToTop" aria-label="Back to top">
+<button id="backToTop" type="button" aria-label="Back to top">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 
@@ -1706,7 +2145,7 @@ footer {
       <li><a href="#projects">Projects</a></li>
       <li><a href="#achievements">Achievements</a></li>
       <li><a href="#contact">Contact</a></li>
-      <div id="navIndicator"></div>
+      <li id="navIndicator" aria-hidden="true"></li>
     </ul>
     <div class="nav-actions">
       <a href="https://github.com/Abhiram1106" target="_blank" rel="noopener noreferrer" class="nav-icon" aria-label="GitHub">
@@ -1766,15 +2205,15 @@ footer {
           <span class="status-dot"></span>
           Currently at Technopose &nbsp;·&nbsp; Open to new opportunities
         </div>
-        <h1 class="hero-name">Jonnadula<br>Abhiram</h1>
+        <h1 class="hero-name">Jonnadula<br class="hero-name-br">Abhiram</h1>
         <p class="hero-title"><span id="heroTyped"></span></p>
         <p class="hero-desc">
-          CS Engineering student at VFSTR University building production-grade
-          web systems, real-time applications, and scalable APIs — with
-          a sharp focus on clean architecture, security, and reliable backend design.
+          I care about the problem before the stack. Whether it's a real-time
+          healthcare platform or an AI language tool, I build things that are
+          fast, secure, and actually maintainable — not just demos that look good in a README.
         </p>
         <div class="hero-ctas">
-          <a href="#projects" class="btn-dark">
+          <a href="#projects" class="btn-dark btn-primary">
             View Projects
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </a>
@@ -1785,7 +2224,7 @@ footer {
         <div class="border-glow-card" id="photoGlowCard">
           <div class="edge-light"></div>
           <div class="border-glow-inner">
-            <img src="profile.jpeg" alt="Jonnadula Abhiram" class="hero-photo" style="border-radius:0;box-shadow:none;">
+            <img src="profile.jpeg" alt="Jonnadula Abhiram" class="hero-photo hero-photo--card">
           </div>
         </div>
       </div>
@@ -1800,7 +2239,7 @@ footer {
   <div class="wrap">
     <div class="rv">
       <p class="eyebrow">About</p>
-      <h2 class="s-title">Builder by instinct,<br>engineer by discipline.</h2>
+      <h2 class="s-title">Builder by instinct, engineer by discipline.</h2>
     </div>
     <div class="about-grid">
       <div class="about-text rv">
@@ -1840,7 +2279,7 @@ footer {
           </div>
           <div class="stat-cell">
             <div class="stat-num">3</div>
-            <div class="stat-label">Hackathon Wins</div>
+            <div class="stat-label">Hackathon Awards</div>
           </div>
           <div class="stat-cell">
             <div class="stat-num">7</div>
@@ -1875,31 +2314,6 @@ footer {
         <li>Integrated Socket.io and WebSocket-based real-time features supporting concurrent multi-user interactions with sub-100ms latency.</li>
         <li>Delivered high-impact, end-to-end solutions in a startup environment — from system design through production deployment and post-launch support.</li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<hr class="hr">
-
-<!-- ══════════ EDUCATION ══════════ -->
-<section id="education">
-  <div class="wrap">
-    <div class="rv">
-      <p class="eyebrow">Education</p>
-      <h2 class="s-title">Academic background.</h2>
-    </div>
-    <div class="edu-card rv d2">
-      <div class="edu-icon">🎓</div>
-      <div class="edu-body">
-        <div class="edu-degree">B.Tech — Computer Science &amp; Engineering</div>
-        <div class="edu-school">Vignan's Foundation for Science, Technology &amp; Research (VFSTR) University, Guntur</div>
-        <div class="edu-meta">
-          <span class="edu-pill">2023 — 2027</span>
-          <span class="edu-pill">Full-Time</span>
-          <span class="edu-pill">CSE</span>
-          <span class="edu-pill">Andhra Pradesh, India</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -2001,6 +2415,60 @@ footer {
 
 <hr class="hr">
 
+<!-- ══════════ GITHUB ACTIVITY ══════════ -->
+<section id="github-heatmap">
+  <div class="wrap">
+    <div class="rv">
+      <h2 class="s-title">GitHub activity.</h2>
+      <p class="s-sub">Consistent commits across personal projects, open-source contributions, and client work at Technopose.</p>
+    </div>
+
+    <div class="gh-panel">
+
+      <!-- Contribution chart with streak badge -->
+      <div class="gh-chart-card rv d1">
+        <div class="gh-chart-header">
+          <div>
+            <div class="gh-chart-title">Contribution activity — last 12 months</div>
+            <div class="gh-chart-sub">Each square = one day · darker = more commits</div>
+          </div>
+          <div class="gh-chart-header-right">
+            <div class="gh-legend">
+              Less
+              <div class="gh-legend-swatch">
+                <span class="l0"></span>
+                <span class="l1"></span>
+                <span class="l2"></span>
+                <span class="l3"></span>
+                <span class="l4"></span>
+              </div>
+              More
+            </div>
+          </div>
+        </div>
+        <img
+          class="gh-chart-img"
+          src="https://ghchart.rshah.org/2563EB/Abhiram1106"
+          alt="Abhiram1106 GitHub contribution chart — last 12 months"
+          loading="lazy"
+        >
+      </div>
+
+      <!-- Profile CTA -->
+      <div class="rv d3">
+        <a class="gh-profile-link" href="https://github.com/Abhiram1106?tab=repositories" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3A12 12 0 0 0 8.2 23.4c.6.1.8-.3.8-.6v-2.3c-3.3.8-4-1.4-4-1.4-.6-1.5-1.4-1.9-1.4-1.9-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+          View full profile on GitHub
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="hr">
+
 <!-- ══════════ PROJECTS ══════════ -->
 <section id="projects">
   <div class="wrap">
@@ -2014,7 +2482,6 @@ footer {
     <div class="featured-row">
       <div class="proj-card proj-c1 rv">
         <div class="proj-idx">01 — Featured</div>
-        <span class="building-badge">Currently Building</span>
         <h3 class="proj-name">SmartCare+ — Intelligent Healthcare Platform</h3>
         <ul class="proj-bullets">
           <li>Designed RBAC dashboards for 3+ user roles managing appointments and clinical records.</li>
@@ -2117,7 +2584,9 @@ footer {
     </div>
     <div class="ach-grid">
       <div class="ach-card rv">
-        <div class="ach-icon ach-icon-amber">🏆</div>
+        <div class="ach-icon ach-icon-amber">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        </div>
         <div>
           <div class="ach-title">HackXlerate 2025 — Finalist</div>
           <div class="ach-org">byteXL · T-Hub Hyderabad</div>
@@ -2125,7 +2594,9 @@ footer {
         </div>
       </div>
       <div class="ach-card rv d1">
-        <div class="ach-icon ach-icon-slate">🥈</div>
+        <div class="ach-icon ach-icon-slate">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
         <div>
           <div class="ach-title">Second Place — Project Expo</div>
           <div class="ach-org">University Project Exhibition</div>
@@ -2133,7 +2604,9 @@ footer {
         </div>
       </div>
       <div class="ach-card rv d3">
-        <div class="ach-icon ach-icon-purple">🚀</div>
+        <div class="ach-icon ach-icon-purple">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09Z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2Z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+        </div>
         <div>
           <div class="ach-title">Quantum Valley — Semi-Finalist</div>
           <div class="ach-org">Amaravathi Quantum Valley Hackathon</div>
@@ -2141,7 +2614,9 @@ footer {
         </div>
       </div>
       <div class="ach-card rv d4">
-        <div class="ach-icon ach-icon-green">🎓</div>
+        <div class="ach-icon ach-icon-green">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
         <div>
           <div class="ach-title">Professional Certifications</div>
           <div class="ach-org">NPTEL · Qualys · Cambridge</div>
@@ -2152,25 +2627,6 @@ footer {
   </div>
 </section>
 
-<hr class="hr">
-
-<!-- ══════════ GITHUB ACTIVITY ══════════ -->
-<section id="github-heatmap">
-  <div class="wrap">
-    <div class="rv">
-      <p class="eyebrow">Open Source</p>
-      <h2 class="s-title">GitHub activity.</h2>
-      <p class="s-sub">Consistent commits across personal projects, open-source contributions, and freelance work.</p>
-    </div>
-    <div class="heatmap-wrap rv d2">
-      <img
-        src="https://ghchart.rshah.org/2563EB/Abhiram1106"
-        alt="Abhiram1106 GitHub contribution chart"
-        loading="lazy"
-      >
-    </div>
-  </div>
-</section>
 
 <hr class="hr">
 
@@ -2182,17 +2638,13 @@ footer {
       <div>
         <div class="rv contact-heading">
           <p class="eyebrow">Contact</p>
-          <h2 class="s-title">Let's build<br>something great.</h2>
-          <p class="s-sub">Open to internships, collaborations,<br>and full-time opportunities. Always excited<br>to connect, build, and contribute.</p>
+          <h2 class="s-title">Let's build something great.</h2>
+          <p class="s-sub">Open to internships, collaborations, and full-time opportunities. Always excited to connect, build, and contribute.</p>
         </div>
         <div class="contact-channels rv d2">
           <a href="https://mail.google.com/mail/?view=cm&to=abhiram.j2006@gmail.com" target="_blank" rel="noopener noreferrer" class="ch-link">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
             abhiram.j2006@gmail.com
-          </a>
-          <a href="tel:+918125551995" class="ch-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l1.01-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            +91 81255 51995
           </a>
           <a href="https://linkedin.com/in/abhiram-jonnadula" target="_blank" rel="noopener noreferrer" class="ch-link">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45H16.9v-5.57c0-1.33 0-3.04-1.85-3.04s-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43A2.06 2.06 0 1 1 5.33 3.3a2.06 2.06 0 0 1 .01 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
@@ -2245,13 +2697,27 @@ footer {
 <footer>
   <div class="wrap">
     <div class="foot-inner">
-      <div class="foot-copy">© <span id="footYear"></span> Jonnadula Abhiram. Built with purpose.</div>
+      <div>
+        <div class="foot-copy">© <span id="footYear"></span> Jonnadula Abhiram. Built with purpose.</div>
+        <div class="foot-tagline">Designed &amp; coded by Abhiram · Open to opportunities</div>
+      </div>
       <div class="foot-links">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#achievements">Achievements</a>
-<a href="#contact">Contact</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="foot-social">
+        <a href="https://github.com/Abhiram1106" target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-handle="@Abhiram1106">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3A12 12 0 0 0 8.2 23.4c.6.1.8-.3.8-.6v-2.3c-3.3.8-4-1.4-4-1.4-.6-1.5-1.4-1.9-1.4-1.9-1.1-.8.1-.8.1-.8 1.2.1 1.8 1.2 1.8 1.2 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6A12 12 0 0 0 12 .3Z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/abhiram-jonnadula" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-handle="abhiram-jonnadula">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45H16.9v-5.57c0-1.33 0-3.04-1.85-3.04s-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43A2.06 2.06 0 1 1 5.33 3.3a2.06 2.06 0 0 1 .01 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+        </a>
+        <a href="mailto:abhiram.j2006@gmail.com" aria-label="Email" data-handle="abhiram.j2006@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -2271,7 +2737,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   const btnHTML = btn.innerHTML;
 
   btn.disabled = true;
-  btn.textContent = 'Sending\u2026';
+  btn.innerHTML = '<span class="spinner"></span> Sending…';
   status.textContent = '';
   status.className = 'form-status';
 
@@ -2636,11 +3102,9 @@ window.addEventListener('scroll', () => {
     const dx  = e.clientX - cx;
     const dy  = e.clientY - cy;
 
-    /* angle from center → cursor */
     const angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90;
     card.style.setProperty('--cursor-angle', `${angle}deg`);
 
-    /* proximity: 0 (far) → 100 (on edge) */
     const distToEdgeX = r.width  / 2 - Math.abs(dx);
     const distToEdgeY = r.height / 2 - Math.abs(dy);
     const distToEdge  = Math.min(distToEdgeX, distToEdgeY);
@@ -2737,16 +3201,7 @@ window.addEventListener('scroll', () => {
   });
 })();
 
-/* ── Cursor Spotlight ── */
-(function () {
-  const spotlight = document.getElementById('cursorSpotlight');
-  if (!spotlight) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  window.addEventListener('mousemove', e => {
-    spotlight.style.left = e.clientX + 'px';
-    spotlight.style.top  = e.clientY + 'px';
-  }, { passive: true });
-})();
+
 
 /* ── Back to Top ── */
 (function () {
@@ -2759,6 +3214,10 @@ window.addEventListener('scroll', () => {
   }, { passive: true });
   btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 })();
+
+/* scroll restoration — always land at top */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
 </script>
 </body>
 </html>
